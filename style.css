@@ -1,0 +1,15 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.popup {
+    background: tomato;
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    text-align: center;
+    color: navy;
+}
