@@ -79,7 +79,6 @@ function getAjaxById(id) {
         div.appendChild(instructions);
         main.appendChild(div); 
 
-        
         console.log(results[0].strArea);
         console.log(results[0].strCategory);
     }
@@ -87,12 +86,20 @@ function getAjaxById(id) {
 
 // DELETE ITEM FROM THE BASKET WITH THE ID 
 function deleteItemFromBasket(el) {
-    let clickedElement = el.target.dataset.id;
     
-    localStorage.removeItem(clickedElement);
+
+    //localStorage.removeItem('favorites', clickedElement);
+
+
+    //Storage.removeItem(favorites.splice(index, 1));
+    
     if(el.target.classList[0] == "delete") {
-        debugger;
+        let clickedElement = el.target.dataset.id;
+        let index = favorites.indexOf(clickedElement);
+        favorites.splice(index, 1);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
         el.target.parentElement.remove();
+        //debugger;
     }
 }
 
@@ -165,30 +172,33 @@ document.querySelector('body').addEventListener('click', function(el) {
 
 
 // REGISTER LOCALSTORAGE ID AND NAME
-var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+
 document.querySelector('body').addEventListener('click', function(el) {
     addItem(el);
 
 });
 
-for (var i=0, iC=localStorage.length; i<iC; ++i) { 
+var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+for (let i = 0; i < favorites.length; i++) {
 
-    var storageKey = localStorage.key(i);
-    var storageValue = JSON.parse(localStorage.getItem(storageKey));
+    //  var storageKey = localStorage.key(i);
+    //  var storageValue = JSON.parse(localStorage.getItem(storageKey));
 
+    let element = favorites[i];
     let deleteImg = document.createElement("IMG");
     let p = document.createElement("P");
 
-
-    p.classList.add(storageValue[i]);
-    deleteImg.dataset.id = storageValue[i];
+    p.classList.add(element.replace(/ /g, ""));
+    
+    deleteImg.dataset.id = element;
     deleteImg.src = "./img/64x64.png";
     deleteImg.classList.add('delete');
     
-    p.innerHTML = storageValue[i];
+    p.innerHTML = element;
     p.appendChild(deleteImg);
     popupBasket.appendChild(p);
-    
+     
 }
 
 // DELETE BASKET ITEM
