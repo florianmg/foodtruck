@@ -1,6 +1,7 @@
 .leave:hover, .el:hover, .menu-burger:hover, .img-search:hover, .basket:hover, .popup-basket img:hover {
     cursor: pointer;
 }
+.remove {display: none;}
 a {
     text-decoration: none;
     color: white;
