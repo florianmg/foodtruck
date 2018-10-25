@@ -1,4 +1,4 @@
-.leave:hover, .el:hover, .menu-burger:hover, .img-search:hover, .basket:hover{
+.leave:hover, .el:hover, .menu-burger:hover, .img-search:hover, .basket:hover, .popup-basket img:hover {
     cursor: pointer;
 }
 a {
@@ -28,7 +28,9 @@ header img {
     width: 80px;
     height: 80px;
 }
-
+.card:hover {
+    cursor: pointer;
+}
 .search-area input {
     width: 40vw;
     height: 50px;
@@ -71,6 +73,10 @@ header img {
     padding: 10px 30px;
     top: 122px;
 }
+.popup-basket p {
+    display: flex;
+}
+
 .result {
     display: flex;
     flex-wrap: wrap;
@@ -85,7 +91,7 @@ header img {
     left: 30px;
     right: 30px;
     text-align: center;
-    color: navy;
+    color: white;
 }
 
 .card {
@@ -98,7 +104,20 @@ header img {
     margin: 20px;
 
 }
-.card img {
+.el {
+    position: relative;
+}
+.add-img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+}
+.card .thumb {
     width: 100%;
     height: auto;
+}
+.delete {
+    width: 20px;
+    height: 20px;
 }
