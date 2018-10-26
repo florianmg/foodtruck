@@ -39,7 +39,7 @@ function getAjax(url, param) {
         div.appendChild(element);
         div.appendChild(img);
         main.appendChild(div); 
-        //debugger;
+        debugger;
     }
 }
 
@@ -87,10 +87,7 @@ function getAjaxById(id) {
 // DELETE ITEM FROM THE BASKET WITH THE ID 
 function deleteItemFromBasket(el) {
     
-
     //localStorage.removeItem('favorites', clickedElement);
-
-
     //Storage.removeItem(favorites.splice(index, 1));
     
     if(el.target.classList[0] == "delete") {
@@ -206,6 +203,13 @@ document.querySelector('body').addEventListener('click',function(el){
     deleteItemFromBasket(el);
 });
 // END DELETE ITEM BASKET
+
+// BASKET TOGGLE 
+document.querySelector('.basket').addEventListener('click', function() {
+    popupBasket.classList.toggle('remove');
+});
+// END BASKET TOGGLE
+
 
 
 

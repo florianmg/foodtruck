@@ -73,9 +73,11 @@ header img {
     background: white;
     padding: 10px 30px;
     top: 122px;
+    z-index: 1;
 }
 .popup-basket p {
     display: flex;
+    justify-content: space-between;
 }
 
 .result {
@@ -122,3 +124,37 @@ header img {
     width: 20px;
     height: 20px;
 }
+
+/* BUTTON  */
+.button:hover {
+    cursor: pointer;
+}
+.button {
+    background: none;
+    border: none;
+    display: block;
+}
+/* END BUTTON */
+
+
+/* COUNTRY SECTION */
+.country {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: 50px auto;
+}
+.country img {
+    max-height: 150px;
+}
+.countrycard {
+    color: white;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    background: tomato;
+    margin: 20px;
+}
+/* END COUNTRY SECTION */
