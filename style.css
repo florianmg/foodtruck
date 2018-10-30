@@ -15,6 +15,8 @@ body{
 main {
     background: #EBEBD3;
     min-height: 100vh;
+    width: 100vw;
+    display: flex;
 }
 header {
     background: darkred;
@@ -84,7 +86,13 @@ header img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-
+    width: 80vw;
+    height: 100%;
+    transition: ease 1s;
+}
+.result.width {
+    width: 100vw;
+    transition: ease 1s;
 }
 .popup {
     background: darkred;
@@ -140,10 +148,16 @@ header img {
 /* COUNTRY SECTION */
 .country {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
-    width: 80%;
-    margin: 50px auto;
+    flex-direction: column;
+    background: darkred;
+    width: 20vw;
+    margin-left: -20vw;
+    transition: ease 1s;
+}
+.country.display {
+    margin: 0;
+    transition: ease 1s;
 }
 .country img {
     max-height: 150px;

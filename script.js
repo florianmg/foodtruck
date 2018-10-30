@@ -5,7 +5,7 @@ let getIngredients = document.querySelector('.allIngredients');
 let content =  document.querySelector('.result');
 let main = document.querySelector('main');
 let popupBasket = document.querySelector('.popup-basket');
-
+let nav = document.querySelector('.country');
 
 // REQUETE AJAX GENERAL
 function getAjax(url, param) {
@@ -39,7 +39,7 @@ function getAjax(url, param) {
         div.appendChild(element);
         div.appendChild(img);
         main.appendChild(div); 
-        debugger;
+        //debugger;
     }
 }
 
@@ -172,6 +172,7 @@ document.querySelector('body').addEventListener('click', function(el) {
 
 
 document.querySelector('body').addEventListener('click', function(el) {
+    
     addItem(el);
 
 });
@@ -230,3 +231,21 @@ document.querySelector('.basket').addEventListener('click', function() {
 //     getAjax("https://www.themealdb.com/api/json/v1/1/list.php?i=list", "strIngredient");
 // });
 // END BUTTON TO SORT
+
+
+// byCountry
+document.querySelector('body').addEventListener('click', function(e) {
+    clicked = e.target;
+    country = clicked.innerText;
+
+    if(country != "") {
+        debugger;
+        content.innerHTML = "";
+        getAjax('https://www.themealdb.com/api/json/v1/1/filter.php?a='+country, 'strMeal');
+    }
+});
+
+document.querySelector('.menu-burger').addEventListener('click', function() {
+    nav.classList.toggle('display');
+    content.classList.toggle('width');
+})
