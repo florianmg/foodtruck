@@ -239,7 +239,7 @@ document.querySelector('body').addEventListener('click', function(e) {
     country = clicked.innerText;
 
     if(country != "") {
-        debugger;
+        //debugger;
         content.innerHTML = "";
         getAjax('https://www.themealdb.com/api/json/v1/1/filter.php?a='+country, 'strMeal');
     }
